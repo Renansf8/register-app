@@ -11,7 +11,7 @@ export const ButtonsContianer = Styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 32px;
+  padding-top: 48px;
 
   button {
     width: 160px;

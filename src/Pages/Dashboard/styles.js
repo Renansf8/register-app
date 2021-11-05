@@ -4,6 +4,6 @@ export const Container = Styled.div`
   display: flex;
 
   h1 {
-    margin: 0 auto;
+    margin: 8px auto;
   }
 `;
