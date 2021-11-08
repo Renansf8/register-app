@@ -1,4 +1,5 @@
 import Styled from 'styled-components';
+import { shade } from 'polished';
 
 export const Container = Styled.div`
   display: flex;
@@ -54,11 +55,23 @@ export const User = Styled.div`
 export const MoreInfos = Styled.p`
   cursor: pointer;
   font-weight: 600;
+  color: #3da9fc;
+  transition: color 0.2s;
+
+  &:hover {
+    color: ${shade(0.2, '#3da9fc')};
+  }
 `;
 
 export const LessInfos = Styled.p`
   cursor: pointer;
   font-weight: 600;
+  color: #3da9fc;
+  transition: color 0.2s;
+
+  &:hover {
+    color: ${shade(0.2, '#3da9fc')};
+  }
 `;
 
 export const AllInfos = Styled.div`

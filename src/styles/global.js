@@ -3,9 +3,9 @@ import { createGlobalStyle } from 'styled-components';
 export const GlobalStyle = createGlobalStyle`
 
   * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
   }
 
   body {
@@ -26,7 +26,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   a {
-    text-decoration: none;
     color: inherit;
+    text-decoration: none;
   }
 `;
