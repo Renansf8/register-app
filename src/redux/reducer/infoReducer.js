@@ -7,7 +7,16 @@ const INITIAL_STATE = {
     email: '',
     phone: '',
   },
-  list: [],
+  addressInfo: {
+    cep: '',
+    address1: '',
+    address2: '',
+  },
+  additionalInfo: {
+    birth: '',
+    cpf: '',
+    income: '',
+  },
 };
 
 const infoReducer = (state = INITIAL_STATE, action) => {

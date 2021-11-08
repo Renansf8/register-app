@@ -13,7 +13,7 @@ export const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
   }
 
-  input, label, textarea, select, button, h1, h2, h3, h4, h5, h6 {
+  input, label, textarea, select, button, h1, h2, h3, h4, h5, h6, span, p {
     font-family: 'Zilla Slab', serif;
   }
 

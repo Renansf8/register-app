@@ -1,6 +1,7 @@
 export const ADD_FORM_INFO = 'ADD_FORM_INFO';
 export const ADD_ADDRESS_INFO = 'ADD_ADDRESS_INFO';
 export const ADD_ADITIONAL_INFO = 'ADD_ADITIONAL_INFO';
+export const SWITCH_LIST = 'SWITCH_LIST';
 
 export const addFormInfo = (name, lastName, email, phone) => ({
   type: ADD_FORM_INFO,
@@ -28,4 +29,8 @@ export const addAditionalInfo = (birth, cpf, income) => ({
     cpf,
     income,
   },
+});
+
+export const switchList = () => ({
+  type: SWITCH_LIST,
 });
