@@ -25,54 +25,64 @@ const Dashboard = ({ toggle }) => {
           <ClientsContainer>
             <h2>Usuários cadastrados</h2>
             <ClientsList>
-              {registerList.map(
-                ({
-                  name,
-                  lastName,
-                  email,
-                  phone,
-                  cep,
-                  address1,
-                  address2,
-                  birth,
-                  cpf,
-                  income,
-                }) => {
-                  return (
-                    <div key={name}>
-                      <p>
-                        <span>Nome:</span> {name}
-                      </p>
-                      <p>
-                        <span>Sobrenome:</span> {lastName}
-                      </p>
-                      <p>
-                        <span>E-mail:</span> {email}
-                      </p>
-                      <p>
-                        <span>Telefone:</span> {phone}
-                      </p>
-                      <p>
-                        <span>CEP:</span> {cep}
-                      </p>
-                      <p>
-                        <span>Endereço 1:</span> {address1}
-                      </p>
-                      <p>
-                        <span>Endereço 2:</span> {address2}
-                      </p>
-                      <p>
-                        <span>Data Nascimento:</span> {birth}
-                      </p>
-                      <p>
-                        <span>CPF:</span> {cpf}
-                      </p>
-                      <p>
-                        <span>Renda Mensal:</span> {income}
-                      </p>
-                    </div>
-                  );
-                }
+              {registerList ? (
+                registerList.map(
+                  (
+                    {
+                      name,
+                      lastName,
+                      email,
+                      phone,
+                      cep,
+                      address1,
+                      address2,
+                      birth,
+                      cpf,
+                      income,
+                    },
+                    i
+                  ) => {
+                    return (
+                      <div key={name}>
+                        <p>
+                          <span>Usuário: </span> {i + 1}
+                        </p>
+                        <p>
+                          <span>Nome:</span> {name}
+                        </p>
+                        <p>
+                          <span>Sobrenome:</span> {lastName}
+                        </p>
+                        <p>
+                          <span>E-mail:</span> {email}
+                        </p>
+                        <p>
+                          <span>Telefone:</span> {phone}
+                        </p>
+                        <p>
+                          <span>CEP:</span> {cep}
+                        </p>
+                        <p>
+                          <span>Endereço 1:</span> {address1}
+                        </p>
+                        <p>
+                          <span>Endereço 2:</span> {address2}
+                        </p>
+                        <p>
+                          <span>Data Nascimento:</span> {birth}
+                        </p>
+                        <p>
+                          <span>CPF:</span> {cpf}
+                        </p>
+                        <p>
+                          <span>Renda Mensal:</span> {income}
+                        </p>
+                      </div>
+                    );
+                  }
+                )
+              ) : (
+                <p>Não Existe nenhum usuário cadastrado!</p>
               )}
             </ClientsList>
           </ClientsContainer>

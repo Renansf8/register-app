@@ -13,7 +13,6 @@ export const ClientsContainer = Styled.div`
   flex-direction: column;
   margin-left: 40px;
 
-
   h2 {
     margin: 16px;
   }
@@ -24,6 +23,20 @@ export const ClientsList = Styled.div`
   flex-wrap: wrap;
   overflow-y: scroll;
   max-height: 520px;
+  /* max-width: 1020px; */
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: whitesmoke;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #cecece;
+    border-radius: 15px;
+  }
 
   div {
     background-color: #fffffe;
@@ -31,6 +44,11 @@ export const ClientsList = Styled.div`
     padding: 16px;
     border-radius: 6px;
     width: 480px;
+    box-shadow: 4px 4px 7px #3da9fc;
+  }
+
+  span {
+    font-weight: 600;
   }
 `;
 

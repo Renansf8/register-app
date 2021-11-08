@@ -18,7 +18,7 @@ export const ButtonsContianer = Styled.div`
     padding: 8px;
     font-size: 20px;
     font-weight: 600;
-    margin: 8px;
+    margin: 16px;
     background-color: #3da9fc;
     border: 0;
     color: #fffffe;
