@@ -3,8 +3,6 @@ import { shade } from 'polished';
 
 export const Container = Styled.div`
   display: flex;
-
-
 `;
 
 export const ClientsContainer = Styled.div`
