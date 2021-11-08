@@ -85,7 +85,7 @@ const FormAddInfo = ({
             registerSuccess(), takeAdditional(birth, cpf, income), setRegister();
           }}
         >
-          Próximo
+          Salvar
         </button>
       </Link>
     </ContinerInfo>

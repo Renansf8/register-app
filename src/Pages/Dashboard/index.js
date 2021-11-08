@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { addInfo } from '../../redux/actions';
 
 import Sidebar from '../../Components/Sidebar';
 import {
@@ -9,9 +10,13 @@ import {
   LeftContent,
   RightContent,
   ClientsList,
+  AllInfos,
+  User,
+  MoreInfos,
+  LessInfos,
 } from './styles';
 
-const Dashboard = ({ toggle }) => {
+const Dashboard = ({ toggle, userInfo, activeList }) => {
   const registerList = JSON.parse(localStorage.getItem('register'));
 
   return (
@@ -43,41 +48,53 @@ const Dashboard = ({ toggle }) => {
                     i
                   ) => {
                     return (
-                      <div key={name}>
+                      <User key={name}>
                         <p>
-                          <span>Usuário: </span> {i + 1}
+                          <span>Usuário: </span> {i + 1} - {name} {lastName}
+                          {!userInfo ? (
+                            <MoreInfos onClick={() => activeList(true)}>
+                              + infos
+                            </MoreInfos>
+                          ) : null}
                         </p>
-                        <p>
-                          <span>Nome:</span> {name}
-                        </p>
-                        <p>
-                          <span>Sobrenome:</span> {lastName}
-                        </p>
-                        <p>
-                          <span>E-mail:</span> {email}
-                        </p>
-                        <p>
-                          <span>Telefone:</span> {phone}
-                        </p>
-                        <p>
-                          <span>CEP:</span> {cep}
-                        </p>
-                        <p>
-                          <span>Endereço 1:</span> {address1}
-                        </p>
-                        <p>
-                          <span>Endereço 2:</span> {address2}
-                        </p>
-                        <p>
-                          <span>Data Nascimento:</span> {birth}
-                        </p>
-                        <p>
-                          <span>CPF:</span> {cpf}
-                        </p>
-                        <p>
-                          <span>Renda Mensal:</span> {income}
-                        </p>
-                      </div>
+                        {userInfo ? (
+                          <AllInfos>
+                            <p>
+                              <span>Nome:</span> {name}
+                            </p>
+                            <p>
+                              <span>Sobrenome:</span> {lastName}
+                            </p>
+                            <p>
+                              <span>E-mail:</span> {email}
+                            </p>
+                            <p>
+                              <span>Telefone:</span> {phone}
+                            </p>
+                            <p>
+                              <span>CEP:</span> {cep}
+                            </p>
+                            <p>
+                              <span>Endereço 1:</span> {address1}
+                            </p>
+                            <p>
+                              <span>Endereço 2:</span> {address2}
+                            </p>
+                            <p>
+                              <span>Data Nascimento:</span> {birth}
+                            </p>
+                            <p>
+                              <span>CPF:</span> {cpf}
+                            </p>
+                            <p>
+                              <span>Renda Mensal:</span> {income}
+                            </p>
+                            <LessInfos onClick={() => activeList(false)}>
+                              - infos
+                            </LessInfos>
+                          </AllInfos>
+                        ) : null}
+                      </User>
                     );
                   }
                 )
@@ -104,6 +121,11 @@ const mapStateToProps = state => ({
   cpf: state.info.additionalInfo.cpf,
   income: state.info.additionalInfo.income,
   toggle: state.list.listSwitch,
+  userInfo: state.list.userInfo,
+});
+
+const mapDispatchToProps = dispatch => ({
+  activeList: value => dispatch(addInfo(value)),
 });
 
 Dashboard.propTypes = {
@@ -118,6 +140,8 @@ Dashboard.propTypes = {
   cpf: PropTypes.string.isRequired,
   income: PropTypes.string.isRequired,
   toggle: PropTypes.bool.isRequired,
+  userInfo: PropTypes.bool.isRequired,
+  activeList: PropTypes.func.isRequired,
 };
 
-export default connect(mapStateToProps)(Dashboard);
+export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);

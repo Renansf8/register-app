@@ -3,34 +3,33 @@ import Styled from 'styled-components';
 export const Container = Styled.div`
   display: flex;
 
-  h1 {
-    margin: 8px auto;
-  }
+
 `;
 
 export const ClientsContainer = Styled.div`
   display: flex;
   flex-direction: column;
-  margin-left: 40px;
+  margin: 0 auto;
 
   h2 {
+    text-align: center;
     margin: 16px;
   }
 `;
 
 export const ClientsList = Styled.div`
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   overflow-y: scroll;
-  max-height: 520px;
-  /* max-width: 1020px; */
+  max-height: 500px;
+  padding-right: 32px;
 
   &::-webkit-scrollbar {
     width: 8px;
   }
 
   &::-webkit-scrollbar-track {
-    background: whitesmoke;
+    background: #f0f0f0;
   }
 
   &::-webkit-scrollbar-thumb {
@@ -38,18 +37,31 @@ export const ClientsList = Styled.div`
     border-radius: 15px;
   }
 
-  div {
-    background-color: #fffffe;
-    margin: 8px;
-    padding: 16px;
-    border-radius: 6px;
-    width: 480px;
-    box-shadow: 4px 4px 7px #3da9fc;
-  }
-
   span {
     font-weight: 600;
   }
+`;
+
+export const User = Styled.div`
+  background-color: #fffffe;
+  margin: 8px;
+  padding: 16px;
+  border-radius: 6px;
+  width: 480px;
+  box-shadow: 4px 4px 7px #3da9fc;
+`;
+
+export const MoreInfos = Styled.p`
+  cursor: pointer;
+  font-weight: 600;
+`;
+
+export const LessInfos = Styled.p`
+  cursor: pointer;
+  font-weight: 600;
+`;
+
+export const AllInfos = Styled.div`
 `;
 
 export const LeftContent = Styled.div`
@@ -62,7 +74,7 @@ export const RightContent = Styled.div`
   flex: 1;
 
   h1 {
-    margin: 0px auto;
+    margin: 16px auto;
     text-align: center;
   }
 `;
